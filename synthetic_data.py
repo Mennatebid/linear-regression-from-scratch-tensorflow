@@ -79,7 +79,5 @@ iterator = iter(train_loader)
 
 x_batch,y_batch = next(iterator)
 
-print(x_batch.shape)
-print(y_batch.shape)
 
         
