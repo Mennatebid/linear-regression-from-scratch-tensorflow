@@ -1,6 +1,8 @@
 import tensorflow as tf
 from synthetic_data import train_loader,val_loader
 
+lambd = 0.01
+
 model = tf.keras.Sequential(
     [
         tf.keras.Input(shape=(2,)),
@@ -10,6 +12,7 @@ model = tf.keras.Sequential(
                 mean=0.0,
                 stddev=0.01
             ),
+            kernel_regularizer=tf.keras.regularizers.L2(lambd/2),
             bias_initializer="zeros"
         )
     ]
